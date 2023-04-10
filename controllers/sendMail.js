@@ -83,13 +83,13 @@ const sendAppointmentInfo = async (req, res) => {
       },
       to: process.env.EMAIL,
       subject: "New Appointment!",
-      html: `<h3>First Name :</h3> <p style="font-size:20px"> ${data.firstName}</p>
-      <h3>Last Name :</h3> <p style="font-size:20px">${data.lastName}</p>
-      <h3>Email :</h3> <p style="font-size:20px"> ${data.email}</p>
-      <h3>Phone Number :</h3> <p style="font-size:20px">  ${data.phoneNumber}</p>
-      <h3>Date : </h3> <p style="font-size:20px"> ${data.date}</p>
-      <h3>Time :</h3> <p style="font-size:20px"> ${data.time}</p>
-      <h3>Location :</h3> <p style="font-size:20px"> ${data.location}</p>`,
+      html: `<p style="font-size:20px;font-weight: bold;">First Name : <span style="font-size:18px"> ${data.firstName}</span></p>
+      <p style="font-size:20px;font-weight: bold;">Last Name : <span style="font-size:18px">${data.lastName}</span></p>
+      <p style="font-size:20px;font-weight: bold;">Email :<span style="font-size:18px"> ${data.email}</span></p>
+      <p style="font-size:20px;font-weight: bold;">Phone Number : <span style="font-size:18px">  ${data.phoneNumber}</span></p>
+      <p style="font-size:20px;font-weight: bold;">Date :  <span style="font-size:18px"> ${data.date}</span></p>
+      <p style="font-size:20px;font-weight: bold;">Time : <span style="font-size:18px"> ${data.time}</span></p>
+      <p style="font-size:20px;font-weight: bold;">Location : <span style="font-size:18px"> ${data.location}</span></p>`,
     };
     transporter.sendMail(userMailOptions, (error, info) => {
       if (error) {
