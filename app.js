@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 let PORT = process.env.PORT || 5000;
 app.get("/", (req, res) => {
-  res.send("Im Server");
+  res.send("I'm a Server for sending Emails");
 });
 
 app.post("/sendAppointmentInfo", sendAppointmentInfo);

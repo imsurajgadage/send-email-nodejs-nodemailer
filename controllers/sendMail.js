@@ -71,8 +71,8 @@ const sendAppointmentInfo = async (req, res) => {
       to: `${data.email}`,
       subject: "Appointment Booked!",
       html: `<p><b>Dear ${data.firstName},</b><br></p>
-      <p style="font-size:25px">We just received your appointment request!.<p>
-      <p style="font-size:25px">We will get back to you soon!.<p>
+      <p style="font-size:22px">We just received your appointment request!.<p>
+      <p style="font-size:22px">We will get back to you soon!.<p>
       <p><b>Best Regards,<br>Cloud Dental Academy Dentistry Simplified</b><p>`,
     };
 
@@ -83,13 +83,13 @@ const sendAppointmentInfo = async (req, res) => {
       },
       to: process.env.EMAIL,
       subject: "New Appointment!",
-      html: `<h5>First Name : ${data.firstName}</h5>
-      <h5>Last Name : ${data.lastName}</h5>
-      <h5>Email : ${data.email}</h5>
-      <h5>Phone Number :  ${data.phoneNumber}</h5>
-      <h5>Date : ${data.date}</h5>
-      <h5>Time : ${data.time}</h5>
-      <h5>Location : ${data.location}</h5>`,
+      html: `<h3>First Name : ${data.firstName}</h3>
+      <h3>Last Name : ${data.lastName}</h3>
+      <h3>Email : ${data.email}</h3>
+      <h3>Phone Number :  ${data.phoneNumber}</h3>
+      <h3>Date : ${data.date}</h3>
+      <h3>Time : ${data.time}</h3>
+      <h3>Location : ${data.location}</h3>`,
     };
     transporter.sendMail(userMailOptions, (error, info) => {
       if (error) {
