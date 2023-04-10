@@ -83,13 +83,13 @@ const sendAppointmentInfo = async (req, res) => {
       },
       to: process.env.EMAIL,
       subject: "New Appointment!",
-      html: `<h3>First Name : ${data.firstName}</h3>
-      <h3>Last Name : ${data.lastName}</h3>
-      <h3>Email : ${data.email}</h3>
-      <h3>Phone Number :  ${data.phoneNumber}</h3>
-      <h3>Date : ${data.date}</h3>
-      <h3>Time : ${data.time}</h3>
-      <h3>Location : ${data.location}</h3>`,
+      html: `<h3>First Name :</h3> <p style="font-size:20px"> ${data.firstName}</p>
+      <h3>Last Name :</h3> <p style="font-size:20px">${data.lastName}</p>
+      <h3>Email :</h3> <p style="font-size:20px"> ${data.email}</p>
+      <h3>Phone Number :</h3> <p style="font-size:20px">  ${data.phoneNumber}</p>
+      <h3>Date : </h3> <p style="font-size:20px"> ${data.date}</p>
+      <h3>Time :</h3> <p style="font-size:20px"> ${data.time}</p>
+      <h3>Location :</h3> <p style="font-size:20px"> ${data.location}</p>`,
     };
     transporter.sendMail(userMailOptions, (error, info) => {
       if (error) {
